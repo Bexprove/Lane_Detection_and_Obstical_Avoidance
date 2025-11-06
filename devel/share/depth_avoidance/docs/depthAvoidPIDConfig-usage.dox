@@ -1,0 +1,11 @@
+\subsubsection usage Usage
+\verbatim
+<node name="depth_avoidance" pkg="depth_avoidance" type="depth_avoidance">
+  <param name="switch" type="bool" value="False" />
+  <param name="linear" type="double" value="0.5" />
+  <param name="angular" type="double" value="1.0" />
+  <param name="depth_threshold" type="double" value="0.6" />
+  <param name="center_size" type="int" value="30" />
+</node>
+\endverbatim
+

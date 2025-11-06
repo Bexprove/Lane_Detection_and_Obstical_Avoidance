@@ -1,0 +1,11 @@
+\subsubsection usage Usage
+\verbatim
+<node name="lane_following" pkg="lane_following" type="lane_following">
+  <param name="linear" type="double" value="0.5" />
+  <param name="fast_linear" type="double" value="0.8" />
+  <param name="P" type="double" value="0.004" />
+  <param name="I" type="double" value="0.0" />
+  <param name="D" type="double" value="0.002" />
+</node>
+\endverbatim
+

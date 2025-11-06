@@ -1,0 +1,8 @@
+<launch>
+    <include file="$(find yahboomcar_laser)/launch/base.launch"/>
+    <node pkg="depth_avoidance" type="depth_avoidance.py" name="depth_avoidance" output="screen">
+        <!-- No dynamic reconfigure parameters needed anymore -->
+        <param name="switch" value="False" />
+    </node>
+</launch>
+

@@ -1,0 +1,20 @@
+<launch>
+    <arg name="VideoSwitch" default="false"/>
+    <arg name="img_flip" default="false"/>
+
+    <!-- Sensors and Base -->
+    <include file="$(find astra_camera)/launch/astrapro.launch"/>
+    <include file="$(find rplidar_ros)/launch/rplidar.launch"/>
+    <include file="$(find yahboomcar_ctrl)/launch/yahboom_joy.launch"/>
+    <include file="$(find yahboomcar_bringup)/launch/yahboomcar.launch"/>
+
+    <!-- Node -->
+    <node name="LaneLidarAvoid"
+          pkg="lane_following"
+          type="lane_follower_lidar_avoid.py"
+          output="screen">
+        <param name="img_flip" type="bool" value="$(arg img_flip)"/>
+        <param name="VideoSwitch" type="bool" value="$(arg VideoSwitch)"/>
+    </node>
+</launch>
+

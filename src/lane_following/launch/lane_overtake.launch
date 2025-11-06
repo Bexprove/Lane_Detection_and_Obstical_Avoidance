@@ -1,0 +1,17 @@
+<launch>
+    <arg name="VideoSwitch" default="false"/>
+    <arg name="img_flip" default="false"/>
+
+    <!-- Sensors and Base Setup -->
+    <include file="$(find rplidar_ros)/launch/rplidar.launch"/>
+    <include file="$(find yahboomcar_ctrl)/launch/yahboom_joy.launch"/>
+    <include file="$(find yahboomcar_bringup)/launch/yahboomcar.launch"/>
+
+
+    <!-- Lane Following Node -->
+    <node name="LaneOvertake" pkg="lane_following" type="lane_follower_with_overtake.py" output="screen" required="true">
+        <param name="img_flip" type="bool" value="$(arg img_flip)"/>
+        <param name="VideoSwitch" type="bool" value="$(arg VideoSwitch)"/>
+
+    </node>
+</launch>
